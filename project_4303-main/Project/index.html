@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>COMP 4303</title>
+    <style>
+        body { margin: 0; }
+        /* Style for the game over and congratulations popups */
+        #gameOverPopup, #congrats {
+            display: none; 
+            position: fixed; 
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 100;
+            background-color: rgb(55, 55, 57); 
+            color: #FFF; 
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Game Over Popup -->
+    <div id="gameOverPopup">
+        Health 0 : Game Over
+        <br><br>
+        <button id="playAgainGameOverButton">Play Again</button>
+    </div>
+
+    <!-- Congratulations Popup -->
+    <div id="congrats">
+        "Congratulations! The Bear has stored enough food for its hibernation phase"
+        <br><br>
+        <button id="playAgainCongratsButton">Play Again</button>
+    </div>
+
+    <script type="module" src="/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const gameOverButton = document.getElementById('playAgainGameOverButton');
+            const congratsButton = document.getElementById('playAgainCongratsButton');
+
+            gameOverButton.addEventListener('click', () => window.location.reload());
+            congratsButton.addEventListener('click', () => window.location.reload());
+        });
+    </script>
+</body>
+</html>
